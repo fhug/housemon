@@ -48,7 +48,7 @@ exports.factory = class
 
     query = "apikey=#{@apikey}&node=#{node}&time=#{time}&json=#{json}"	
 
-    req = http.request "#{@server}/input/post?#{query}", (res) =>
+    req = http.request "#{@server}/input/post.json?#{query}", (res) =>
       res.on 'end', =>
         status = res.statusCode
         #console.log "Emoncms -> Node #{node} = #{json}. HTTP#{status}"
